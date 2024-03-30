@@ -1,0 +1,23 @@
+{
+  "name": "autotrain-xblock",
+  "version": "1.0.0",
+  "description": "Model training for xblock.aendra.dev",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx --require dotenv/config generate-training-data.ts",
+    "get-labels-from-psql": "docker exec postgres psql -U postgres -d ozone --csv -c \"SELECT * FROM label\" > labels.csv"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@atproto/api": "^0.12.2",
+    "@atproto/ozone": "^0.1.5",
+    "@atproto/xrpc-server": "^0.5.0",
+    "@types/node": "^20.11.30",
+    "@types/papaparse": "^5.3.14",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "papaparse": "^5.4.1"
+  }
+}
